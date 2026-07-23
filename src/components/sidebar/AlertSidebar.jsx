@@ -1,4 +1,5 @@
 import { useAppStore } from '../../store/appStore';
+import { NotificationSettings } from './NotificationSettings';
 
 export function AlertSidebar({
   eventTypes,
@@ -26,6 +27,14 @@ export function AlertSidebar({
         {totalAlerts}
       </p>
 
+      <hr />
+
+      {/* <h3>Notifications</h3>
+
+      <p>
+        Browser notifications enabled.
+      </p> */}
+      
       {eventTypes.map((type) => (
         <div key={type}>
           <label>
@@ -44,6 +53,9 @@ export function AlertSidebar({
           </label>
         </div>
       ))}
+      <div style={{ marginTop: '2rem' }}>
+        <NotificationSettings eventTypes={eventTypes} />
+      </div>
     </div>
   );
 }
